@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 function Grettings() {
-    return (
-        <div>connected</div>
-    )
+  return (
+    <div>connected</div>
+  );
 }
 
 export default Grettings;
