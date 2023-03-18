@@ -4,10 +4,10 @@ import {
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
-import { countriesReducer } from './greetings';
+import { greetingsReducer } from './greetings';
 
 const reducer = combineReducers({
-  countriesReducer,
+  greetingsReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
