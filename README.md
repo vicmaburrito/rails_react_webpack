@@ -240,6 +240,6 @@ I would like to thank MICROVERSE for preparing the content to work.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/vicmaburrito/rails_react_webpack/MIT.md) licensed.
+This project is [MIT](./MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
