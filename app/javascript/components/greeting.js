@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Gretting({ message, language, position }) {
   return (
@@ -13,5 +14,11 @@ function Gretting({ message, language, position }) {
     </>
   );
 }
+
+Gretting.propTypes = {
+  message: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired,
+  position: PropTypes.number.isRequired,
+};
 
 export default Gretting;
