@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getGreetings } from '../redux/greetings';
+import Gretting from './greeting';
+import Loading from './loading';
 
-function Grettings() {
+function Greetings() {
   const dispatch = useDispatch();
   const { loading, greetings } = useSelector((state) => state.greetingsReducer);
 
@@ -11,20 +13,32 @@ function Grettings() {
   }, [dispatch]);
 
   return (
-    <div>
+    <>
       { loading ? (
-        <div className="d-flex justify-content-center mt-5">
-          <span className="mt-5 h3">Loading...</span>
-        </div>
+        <Loading />
       ) : (
-        greetings.map((greeting) => (
-          <div key={greeting.id}>
-            <p>{greeting.message}</p>
-            <p>{greeting.language}</p>
-          </div>
-        )))}
-    </div>
+        <div className="container">
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Greeting</th>
+                <th scope="col">Language</th>
+              </tr>
+            </thead>
+            { greetings.map((greeting, index) => (
+              <Gretting
+                key={greeting.id}
+                message={greeting.message}
+                language={greeting.language}
+                position={index + 1}
+              />
+            ))}
+          </table>
+        </div>
+      )}
+    </>
   );
 }
 
-export default Grettings;
+export default Greetings;
